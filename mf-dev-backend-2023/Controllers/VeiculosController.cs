@@ -17,7 +17,7 @@ namespace mf_dev_backend_2023.Controllers
 
             var dados = await _context.Veiculos.ToListAsync();
 
-            return View();
+            return View(dados);
         }
 
         public IActionResult Create()
@@ -35,7 +35,7 @@ namespace mf_dev_backend_2023.Controllers
             }
 
 
-            return View();
+            return View(veiculo);
         }
     }
 }
