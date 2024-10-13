@@ -68,7 +68,14 @@ namespace mf_dev_backend_2023.Controllers
             return View();
         }
 
-       
-        
+        public async Task<IActionResult> Details(int? id)
+
+        {
+            var dados = await _context.Veiculos.FindAsync(id);
+            if(dados==null)
+                return NotFound();
+
+            return View(dados);
+        }
     }
 }
